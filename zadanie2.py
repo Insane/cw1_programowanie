@@ -1,3 +1,4 @@
+#Funkcja napisana po zajeciach:
 def palindrom(arg1):
     l1=0
     arg2=str(arg1).lower()
@@ -9,11 +10,19 @@ def palindrom(arg1):
             dl=dl-1
             l1=l1+1
     if l1==l2:
-        print True
+        return True
     else:
-        print False
+        return False
 
-palindrom("Ikar lapal raki")
-palindrom("Ikar") 
-
-  
+#Zoptymalizowana funkcja:
+def palindrom2(arg1):
+    arg1=(str(arg1).replace(" ", "")).lower()
+    if arg1==arg1[::-1]:
+        return True
+    else:
+        return False
+    
+print palindrom("Ikar lapal raki")
+print palindrom("Ikar") 
+print palindrom2("Ikar lapal raki")
+print palindrom2("Ikar") 
